@@ -1,0 +1,251 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class QCore2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		BufferedReader lineinput= new BufferedReader (new InputStreamReader(System.in));
+		
+		Scanner user_selection= new Scanner (System.in);
+		Scanner user_input = new Scanner (System.in);
+		int selection=3;
+		int currInt;
+		char currChar;
+		String input="";
+		String output="";
+		boolean finished=false;
+		
+		
+		//Get User Input
+		while (finished==false) {
+			
+			System.out.println("\n"+ "Please input your selection:" );
+			System.out.println("1: Qradar Destination IP Search");
+			System.out.println("2: Qradar Source IP Search");
+			System.out.println("0: Exit");
+			
+			selection=user_selection.nextInt();
+			
+			while (selection !=0 && selection !=1 && selection !=2 )
+				
+			{
+				System.out.println("Invalid Input" + "\n " );
+				System.out.println("\n"+ "Please input your selection:" );;
+				System.out.println("1: Qradar Destination IP Search");
+				System.out.println("2: Qradar Source IP Search");
+				System.out.println("0: Exit");
+				
+				selection=user_selection.nextInt();
+				
+			}
+	if (selection==1 )
+			
+		{
+		
+		output="Select * from flows Where (destinationip='";
+		
+		System.out.println("\n"+ "Please enter your list of IPs separated by spaces or commas:" );
+		
+		//take in multi-line feed
+		try{input=lineinput.readLine();}
+		catch (IOException e) {};
+		
+		System.out.println(input);
+		Eraser.LineEraser(input);
+		
+		//remove new lines and carriage returns
+		
+				
+			
+		}
+		
+			
+		for (int counter=0; counter<=input.length()-1;counter++) {
+				
+				currChar=input.charAt(counter);
+				currInt= (int) currChar;
+				
+				if (currInt==32 || currInt==44) {
+					output=output+"' OR destinationip='"+"";
+				}
+				//System.out.print(currInt);
+				if (currInt!=32 && currInt!=44) {
+					output=output+input.charAt(counter);
+				}
+			
+				
+		
+			}
+			System.out.println("\n " + output + "' )" + "\n ");
+			
+		
+		}
+		
+	
+		
+	
+	if (selection==2 )
+		
+	{
+	
+	output="Select * from flows Where (sourceip='";
+	
+	System.out.println("\n"+ "Please enter your list of IPs separated by spaces or commas:" );
+	input=user_input.nextLine();
+		
+	for (int counter=0; counter<=input.length()-1;counter++) {
+			
+			currChar=input.charAt(counter);
+			currInt= (int) currChar;
+			
+			if (currInt==32 || currInt==44) {
+				output=output+"' OR sourceip='"+"";
+			}
+			//System.out.print(currInt);
+			if (currInt!=32 && currInt!=44) {
+				output=output+input.charAt(counter);
+			}	
+	
+		}
+		System.out.println("\n " + output + "' )" + "\n ");
+		
+		
+	}
+	
+
+	
+
+	if (selection==0) {
+		
+		finished=true;
+		System.exit(0);}
+	
+	}
+	}
+
+import java.util.Scanner;
+import java.io.*;
+
+public class QCore2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		BufferedReader lineinput= new BufferedReader (new InputStreamReader(System.in));
+		
+		Scanner user_selection= new Scanner (System.in);
+		Scanner user_input = new Scanner (System.in);
+		int selection=3;
+		int currInt;
+		char currChar;
+		String input="";
+		String output="";
+		boolean finished=false;
+		
+		
+		//Get User Input
+		while (finished==false) {
+			
+			System.out.println("\n"+ "Please input your selection:" );
+			System.out.println("1: Qradar Destination IP Search");
+			System.out.println("2: Qradar Source IP Search");
+			System.out.println("0: Exit");
+			
+			selection=user_selection.nextInt();
+			
+			while (selection !=0 && selection !=1 && selection !=2 )
+				
+			{
+				System.out.println("Invalid Input" + "\n " );
+				System.out.println("\n"+ "Please input your selection:" );;
+				System.out.println("1: Qradar Destination IP Search");
+				System.out.println("2: Qradar Source IP Search");
+				System.out.println("0: Exit");
+				
+				selection=user_selection.nextInt();
+				
+			}
+	if (selection==1 )
+			
+		{
+		
+		output="Select * from flows Where (destinationip='";
+		
+		System.out.println("\n"+ "Please enter your list of IPs separated by spaces or commas:" );
+		
+		//take in multi-line feed
+		try{input=lineinput.readLine();}
+		catch (IOException e) {};
+		
+		System.out.println(input);
+		Eraser.LineEraser(input);
+		
+		//remove new lines and carriage returns
+		
+				
+			
+		}
+		
+			
+		for (int counter=0; counter<=input.length()-1;counter++) {
+				
+				currChar=input.charAt(counter);
+				currInt= (int) currChar;
+				
+				if (currInt==32 || currInt==44) {
+					output=output+"' OR destinationip='"+"";
+				}
+				//System.out.print(currInt);
+				if (currInt!=32 && currInt!=44) {
+					output=output+input.charAt(counter);
+				}
+			
+				
+		
+			}
+			System.out.println("\n " + output + "' )" + "\n ");
+			
+		
+		}
+		
+	
+		
+	
+	if (selection==2 )
+		
+	{
+	
+	output="Select * from flows Where (sourceip='";
+	
+	System.out.println("\n"+ "Please enter your list of IPs separated by spaces or commas:" );
+	input=user_input.nextLine();
+		
+	for (int counter=0; counter<=input.length()-1;counter++) {
+			
+			currChar=input.charAt(counter);
+			currInt= (int) currChar;
+			
+			if (currInt==32 || currInt==44) {
+				output=output+"' OR sourceip='"+"";
+			}
+			//System.out.print(currInt);
+			if (currInt!=32 && currInt!=44) {
+				output=output+input.charAt(counter);
+			}	
+	
+		}
+		System.out.println("\n " + output + "' )" + "\n ");
+		
+		
+	}
+	
+	if (selection==0) {
+		
+		finished=true;
+		System.exit(0);}
+	
+	}
+	}
+
